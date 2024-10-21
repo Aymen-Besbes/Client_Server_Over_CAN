@@ -1,0 +1,29 @@
+stages:
+  - build
+  - run_server
+  - run_client
+  - test
+
+build-job:
+  stage: build
+  image: rust:latest
+  script:
+    - cargo build --verbose
+
+run_server-job:
+  stage: run_server
+  image: rust:latest
+  script:
+    - cargo run --bin server
+
+run_client-job:
+  stage: run_client
+  image: rust:latest
+  script:
+    - cargo run --bin client
+
+test-job:
+  stage: test
+  image: rust:latest
+  script:
+    - cargo test
