@@ -26,14 +26,7 @@ struct ConfigServer{
     interface: Option<String>,
 }
 
-#[derive(Debug)]
-pub struct Config {
-    pub client_interface: Option<String>,
-    pub client_data: Option<[u8; 3]>,
-    pub client_frame_id: Option<u32>,
-    pub server_interface: Option<String>,
-     
-}
+
 
 //Public function to use in client and server applications to load the configuration file
 pub fn load_config(path_config: Option<String>) ->Result< (String, [u8;3],u32), Box<dyn BoxError>>{
