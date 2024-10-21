@@ -1,0 +1,14 @@
+{
+    "client_app": {
+      "frame_id": 294,
+      "data": [
+        170,
+        177,
+        254
+      ],
+      "interface": "vcan0"
+    },
+    "server_app": {
+      "interface": "vcan0"
+    }
+  }
