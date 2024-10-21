@@ -84,7 +84,7 @@ pub fn load_config(path_config: Option<String>) ->Result< (String, [u8;3],u32), 
 
 //main function to test the utility of the code 
 fn main() -> Result<(), Box<dyn BoxError >>{
-    let mut path : Option<String> = Some(String::from("src/config/config.toml")) ;
+    let mut path : Option<String> = Some(String::from("src/config/config.json")) ;
     let config = load_config(path)?;
     println!("config.interface: {:?}",config);
     Ok(())
