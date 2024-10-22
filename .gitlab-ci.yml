@@ -21,7 +21,7 @@ run-server-job:
 run-client-job:
   stage: run
   before_script:
-    -sleep 2
+    - sleep 2
   image: rust:latest
   script:
     - cargo run --bin client
