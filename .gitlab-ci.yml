@@ -19,7 +19,7 @@ run-client-job:
   stage: run
   image: rust:latest
   script:
-    - sleep(10)
+    - sleep 5
     - cargo run --bin client
 
 test-job:
