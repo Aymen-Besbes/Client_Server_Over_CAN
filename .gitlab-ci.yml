@@ -13,16 +13,13 @@ run-server-job:
   stage: run
   image: rust:latest
   script:
-    - cargo run --bin server
+    - cargo run --bin server &
   
 run-client-job:
   stage: run
   image: rust:latest
-  needs: ["run-server-job"]
   script:
-    - sleep 5
     - cargo run --bin client
-  dependencies: [run-server-job]
   
 test-job:
   stage: test
