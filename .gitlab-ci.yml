@@ -23,7 +23,7 @@ run-client-job:
   script:
     - sleep 5
     - cargo run --bin client
-  dependencies: run-server-job
+  dependencies: [run-server-job]
   
 test-job:
   stage: test
