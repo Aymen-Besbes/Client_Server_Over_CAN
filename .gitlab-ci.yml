@@ -24,7 +24,7 @@ run-client-job:
     - sleep 2
   image: rust:latest
   script:
-    - cargo run --bin client
+    - cargo run --bin client --verbose
   artifacts:
     paths:
       - client
