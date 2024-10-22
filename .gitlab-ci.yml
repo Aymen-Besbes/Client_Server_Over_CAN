@@ -13,6 +13,7 @@ run-server-job:
   stage: run
   image: rust:latest
   before_script:
+    - apt install sudo
     # Install iproute2 package for 'ip' command
     - apt-get update && apt-get install -y iproute2
     # Ensure any other dependencies are installed as needed
