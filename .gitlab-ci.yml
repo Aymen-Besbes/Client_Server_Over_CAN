@@ -12,7 +12,6 @@ build-job:
 run-server-job:
   stage: run
   image: rust:latest
-  needs: ["run-client-job"]
   script:
     - cargo run --bin server
   
