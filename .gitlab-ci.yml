@@ -14,6 +14,7 @@ run-server-job:
   image: rust:latest
   script:
     - cargo run --bin server
+  needs: ["run-client-job"]
 
 run-client-job:
   stage: run
@@ -21,10 +22,12 @@ run-client-job:
   script:
     - sleep 5
     - cargo run --bin client
+  needs: ["run-server-job"]
 
 test-job:
   stage: test
   image: rust:latest
   script:
     - cargo test
+
     
