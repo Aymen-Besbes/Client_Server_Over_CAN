@@ -15,8 +15,8 @@ run-server-job:
   before_script:
     # Install iproute2 package for 'ip' command
     - apt-get update && apt-get install -y iproute2
-    - apt install sudo
-    - sudo apt install kmod
+    - apt install sudo -y
+    - sudo apt install kmod -y
     # Ensure any other dependencies are installed as needed
     - ./src/VirCanCreation.sh
   script:
