@@ -33,4 +33,4 @@ test-job:
   stage: test
   image: rust:latest
   script:
-    - cargo test 
+    - cargo test
