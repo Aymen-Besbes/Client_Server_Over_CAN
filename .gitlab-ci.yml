@@ -1,29 +1,38 @@
-image: rust:latest
-
 stages:
   - build
   - run
+  - test
 
-variables:
-  CARGO_TARGET_DIR: target
-
-build:
+build-job:
   stage: build
+  image: rust:latest
   script:
-    - echo "Building the project..."
-    - cargo build --release
+    - cargo build --verbose
 
-run_server:
+run-server-job:
   stage: run
+  image: rust:latest
+  before_script:
+    - ./src/VirCanCreation.sh
   script:
-    - echo "Running the server..."
     - cargo run --bin server &
-    - sleep 5 # Wait for the server to start
-    - echo "Executing virtualcancreation.sh from server..."
-    - ./src/VirCanCreation.sh # Adjust the path as necessary
+  artifacts:
+    paths:
+      - server
 
-run_client:
+run-client-job:
   stage: run
+  before_script:
+    - sleep 2
+  image: rust:latest
   script:
-    - echo "Running the client..."
-    - cargo run --bin client
+    - cargo run --bin client --verbose
+  artifacts:
+    paths:
+      - client
+
+test-job:
+  stage: test
+  image: rust:latest
+  script:
+    - cargo test
