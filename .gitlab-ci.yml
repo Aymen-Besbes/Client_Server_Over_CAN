@@ -1,7 +1,6 @@
 stages:
   - build
-  - run_server
-  - run_client
+  - run
   - test
 
 build-job:
@@ -10,16 +9,17 @@ build-job:
   script:
     - cargo build --verbose
 
-run_server-job:
-  stage: run_server
+run-server-job:
+  stage: run
   image: rust:latest
   script:
     - cargo run --bin server
 
-run_client-job:
-  stage: run_client
+run-client-job:
+  stage: run
   image: rust:latest
   script:
+    - sleep(10)
     - cargo run --bin client
 
 test-job:
@@ -27,3 +27,4 @@ test-job:
   image: rust:latest
   script:
     - cargo test
+    
