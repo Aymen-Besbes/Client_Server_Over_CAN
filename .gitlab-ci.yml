@@ -16,16 +16,13 @@ run-server-job:
     - ifconfig
   script:
     - cargo run --bin server &
-
-
-run-client-job:
-  stage: run
-  before_script:
-    - sleep 2
-  image: rust:latest
-  script:
-    - cargo run --bin client --verbose &
-    - sleep 20
+    - PIDSERVER=$!
+    - sleep 5
+    - cargo run --bin client &
+    - PID=$!
+    - sleep 30
+    - kill $PIDCLIENT
+    - kill $PIDSERVER
 
 
 test-job:
