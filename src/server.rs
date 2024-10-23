@@ -8,7 +8,7 @@ use config::load_config;
 
 //Function that allow to run a shell script to create a virtual can
 fn create_virtual_can()->io:: Result<()> {
-  let output = Command::new("VirCanCreation.sh").output()?;
+  let output = Command::new("src/VirCanCreation.sh").output()?;
   if output.status.success() {
     println!("Script executed successfully");
   } else {

@@ -15,15 +15,7 @@ run-server-job:
   before_script:
     - ifconfig
   script:
-    - cargo run --bin server &
-    - PIDSERVER=$!
-    - sleep 5
-    - cargo run --bin client &
-    - PID=$!
-    - sleep 30
-    - kill $PIDCLIENT
-    - kill $PIDSERVER
-
+    - ( cargo run --bin server & ) && (PIDSERVER=$!) && ( cargo run --bin client & ) && (PIDCLIENT=$!) && (sleep 30 &) && (kill $PIDCLIENT ) && (kill $PIDSERVER)
 
 test-job:
   stage: test
