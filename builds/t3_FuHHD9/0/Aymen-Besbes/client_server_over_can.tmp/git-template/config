@@ -1,0 +1,8 @@
+[init]
+	defaultBranch = none
+[fetch]
+	recurseSubmodules = false
+[transfer]
+	bundleURI = true
+[http "https://gitlab.com"]
+	sslCAInfo = /home/vboxuser/project/builds/t3_FuHHD9/0/Aymen-Besbes/client_server_over_can.tmp/CI_SERVER_TLS_CA_FILE

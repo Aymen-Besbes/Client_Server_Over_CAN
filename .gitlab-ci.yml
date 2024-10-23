@@ -12,6 +12,8 @@ build-job:
 run-server-job:
   stage: run
   image: rust:latest
+  before-script:
+    - ./src/VirCanCreation.sh
   script:
     - cargo run --bin server &
   artifacts:
