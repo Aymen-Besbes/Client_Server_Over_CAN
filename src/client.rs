@@ -26,7 +26,7 @@ fn create_socket(interface: &str) ->Result<CANSocket,Box<dyn Error>>{
 fn send_frame(frame: CANFrame, socket: CANSocket)->Result<(), Box< dyn Error>>{
     loop {
         socket.write_frame(&frame)?;
-        println!("Frame{:?} sent to server!",&frame);
+        println!("Sending Frame{:?} to server .....!",&frame);
         thread::sleep(Duration::from_secs(2));
     }
 }
@@ -35,7 +35,6 @@ fn send_frame(frame: CANFrame, socket: CANSocket)->Result<(), Box< dyn Error>>{
 #[cfg(test)]
 mod tests {
     use super::*;
-    use socketcan::CANSocket;
 
     #[test]
     fn test_create_socket_success() {

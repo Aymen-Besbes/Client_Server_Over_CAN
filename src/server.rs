@@ -31,7 +31,7 @@ fn receive_frame(socket: CANSocket)->Result<(), Box< dyn Error>>{
   loop {
     match socket.read_frame(){
         Ok(frame)=> {
-            println!("Rceived CAN: {:?}",frame);
+            println!("Rceiving CAN frame : {:?} ......!",frame);
           },
         Err(e) => {
           eprintln!("Failed to read CAN:{}",e);
