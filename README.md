@@ -1,7 +1,7 @@
 # Client Server Communication Using CAN
 
 ## Overview
-This repository is presentic a simple Client Server communication for CAN Protocol Using Rust Programming Language.
+This repository is presenting a simple Client Server communication for CAN Protocol Using Rust Programming Language.
 The client sends a data frame within a frameid via an interface configured into the configuration file.toml
 ## Project Structure
 

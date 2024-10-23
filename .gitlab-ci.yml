@@ -13,7 +13,9 @@ run-server-job:
   stage: run
   image: rust:latest
   before_script:
+    - ifconfig
     - ./src/VirCanCreation.sh
+    - ifconfig
   script:
     - cargo run --bin server &
 
@@ -24,7 +26,8 @@ run-client-job:
     - sleep 2
   image: rust:latest
   script:
-    - cargo run --bin client --verbose
+    - cargo run --bin client --verbose &
+    - sleep 20
 
 
 test-job:
