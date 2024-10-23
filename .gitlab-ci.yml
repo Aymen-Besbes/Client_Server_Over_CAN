@@ -14,8 +14,6 @@ run-server-job:
   image: rust:latest
   before_script:
     - ifconfig
-    - ./src/VirCanCreation.sh
-    - ifconfig
   script:
     - cargo run --bin server &
 
