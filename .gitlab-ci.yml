@@ -6,8 +6,6 @@ stages:
 build-job:
   stage: build
   image: rust:latest
-  tags:
-    - my-runner
   script:
     - cargo build --verbose
 
@@ -16,16 +14,12 @@ run-server-job:
   image: rust:latest
   script:
     - cargo run --bin server &
-  tags:
-    - my-runner
   artifacts:
     paths:
       - server
 
 run-client-job:
   stage: run
-  tags:
-    - my-runner
   before_script:
     - sleep 2
   image: rust:latest
