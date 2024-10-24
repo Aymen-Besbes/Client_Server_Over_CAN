@@ -47,7 +47,8 @@ Those technologies were used :
         ```./launch_communication.sh client ./src/config/config.json```
 
 ## Configuration File Structure
-![Alt Text](configstructure.png){:width="300" height="200"}
+![Alt Text](configstructure.png){:width="600" height="400"}
+
 The configuration is represented in JSON format and consists of two main components: client_app and server_app.
     * client_app
     The client_app section contains the following fields:
