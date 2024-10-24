@@ -40,10 +40,11 @@ Those technologies were used :
     - ```./VirCanCreation.sh interface_name```
 
 * launch_communication.sh:
-    Utility: Allows to run an application within a given or a default path.
-    Usage: 
+    - Utility: Allows to run an application within a given or a default path.
+
+    - Usage: 
         ```./launch_communication.sh application path_to_configuration_file```
-    Example:
+    - Example:
         ```./launch_communication.sh client ./src/config/config.json```
 
 ## Configuration File Structure
@@ -51,48 +52,69 @@ Those technologies were used :
 
 The configuration is represented in JSON format and consists of two main components: client_app and server_app:
 
-* client_app
+* client_app:
+
     The client_app section contains the following fields:
+
        - frame_id:
+
             Type: Integer
+
             Description: The identifier for the CAN frame. 
+
        - data:
+
             Type: Array of Integers
+
             Description: An array representing the data payload of the CAN frame.
+
        - interface:
+
             Type: String
+
             Description: The name of the virtual CAN interface used for communication.
+
 * server_app
+
     The server_app section contains the following field:        
+
        - interface:
+
             Type: String
+
             Description: The name of the virtual CAN interface that the server listens on. 
 
 
 ## Installation Instructions
 
 ### Prerequisites
+
    - Linux environment 
+
    - Ensure Cargo installation: 
+
         ```curl https://sh.rustup.rs -sSf | sh```
 
 ### Cloning the repository.
     clone the project via : 
+
         ```git clone https://gitlab.com/Aymen-Besbes/client_server_over_can.git```
 
 ## Usage:
-1. clone the project via : 
+1. clone the project
 
-    git clone https://gitlab.com/Aymen-Besbes/client_server_over_can.git
-
-2. Run ```cargo build```
+2. Run:
+    
+        ```cargo build```
 
 3. Launch both applications on two different terminals:
 
     - Terminal1: 
+
         ```./launch_communication.sh server path/to/config/file```
     
     - Terminal2:
+    
          ```./launch_communication.sh client path/to/config/file```
     
     Notes: 
