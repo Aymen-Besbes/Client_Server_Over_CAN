@@ -15,9 +15,10 @@ run-server-job:
   before_script:
     - ifconfig
   script:
-    - ./server.sh & ./client.sh
+    - (./test_server.sh & ./test_client.sh ) >test.log
   after_script:
-    - echo "Execution terminated"
+    - echo "Output"
+    - cat test.log
 
 test-job:
   stage: test
