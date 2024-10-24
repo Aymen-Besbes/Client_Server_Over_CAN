@@ -16,6 +16,8 @@ run-server-job:
     - ifconfig
   script:
     - ./server.sh & ./client.sh
+  after_script:
+    - echo "Execution terminated"
 
 test-job:
   stage: test
