@@ -1,7 +1,14 @@
-[client_app]
-frame_id = 0x123
-data = [0xcc, 0xaa, 0xcc]
-interface = "vcan0"
-
-[server_app]
-interface= "vcan0"
+{
+  "client_app": {
+    "frame_id": 291,
+    "data": [
+      171,
+      188,
+      205
+    ],
+    "interface": "vcan1"
+  },
+  "server_app": {
+    "interface": "vcan1"
+  }
+}

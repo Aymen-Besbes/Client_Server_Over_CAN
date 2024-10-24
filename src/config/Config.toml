@@ -1,7 +1,0 @@
-[client_app]
-frame_id = 0x123
-data = [0xaa, 0xaa, 0xaa]
-interface = "vcan0"
-
-[server_app]
-interface= "vcan0"

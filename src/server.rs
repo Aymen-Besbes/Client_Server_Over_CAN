@@ -6,9 +6,9 @@ use std::process::Command;
 mod config;
 use config::load_config;
 
-//Function that allow to run a shell script to create a virtual can
-fn create_virtual_can()->io:: Result<()> {
-  let output = Command::new("src/VirCanCreation.sh").output()?;
+//Function that allow to run a shell script to create a virtual can within given name
+fn create_virtual_can(interface: &str)->io:: Result<()> {
+  let output = Command::new("src/VirCanCreation.sh").arg(interface).output()?;
   if output.status.success() {
     println!("Script executed successfully");
   } else {
@@ -43,14 +43,14 @@ fn receive_frame(socket: CANSocket)->Result<(), Box< dyn Error>>{
 //main function
 fn main()-> Result<(), Box<dyn Error>> {
   
-  //create a virtual can
-  let _=create_virtual_can();
-
   //extract the path of the configuration file from the command ""cargo run -bin server configuration_file_path" 
   let path =std::env::args().nth(1);
 
   //Get the interface value from the selected configuration file
   let (interface,_,_) =load_config(path)?;
+
+  //create a virtual can
+  let _=create_virtual_can(&interface);
 
   //Open the socket
   let socket = create_socket(&interface)?;

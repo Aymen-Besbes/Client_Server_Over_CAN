@@ -1,4 +1,0 @@
-[client]
-frame_id = 0x542
-data = [0xab, 0xbb, 0xcc]
-interface = "vcan0"
