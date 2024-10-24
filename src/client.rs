@@ -64,7 +64,7 @@ fn main()-> Result<(), Box<dyn Error>> {
     let path =std::env::args().nth(1);
     
     //Get the interface , data and frame_id values from the selected configuration file
-    let (interface,data,frame_id) =load_config(path)?;
+    let (interface,data,frame_id,_) =load_config(path)?;
 
     //open the socket
     let socket = create_socket(&interface)?;

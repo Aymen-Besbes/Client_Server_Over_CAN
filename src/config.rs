@@ -28,7 +28,7 @@ struct ConfigServer{
 
 
 //Public function to use in client and server applications to load the configuration file
-pub fn load_config(path_config: Option<String>) ->Result< (String, [u8;3],u32), Box<dyn BoxError>>{
+pub fn load_config(path_config: Option<String>) ->Result< (String, [u8;3],u32,String), Box<dyn BoxError>>{
 
     //set the default path for the configuration
     let default: String =String::from("src/config/default.json");
@@ -68,7 +68,7 @@ pub fn load_config(path_config: Option<String>) ->Result< (String, [u8;3],u32), 
         .unwrap_or(default_server.interface.unwrap());
 
     //return configuration fields
-    Ok((client_interface, client_data, client_frame_id))
+    Ok((client_interface, client_data, client_frame_id,server_interface))
     
     
 }
@@ -76,7 +76,7 @@ pub fn load_config(path_config: Option<String>) ->Result< (String, [u8;3],u32), 
 
 //main function to test the utility of the code 
 fn main() -> Result<(), Box<dyn BoxError >>{
-    let mut path : Option<String> = Some(String::from("src/config/default.json")) ;
+    let path : Option<String> = Some(String::from("src/config/default.json")) ;
     let config = load_config(path)?;
     println!("config.interface: {:?}",config);
     Ok(())

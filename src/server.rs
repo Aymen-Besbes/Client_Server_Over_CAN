@@ -47,7 +47,7 @@ fn main()-> Result<(), Box<dyn Error>> {
   let path =std::env::args().nth(1);
 
   //Get the interface value from the selected configuration file
-  let (interface,_,_) =load_config(path)?;
+  let (_,_,_,interface) =load_config(path)?;
 
   //create a virtual can
   let _=create_virtual_can(&interface);
