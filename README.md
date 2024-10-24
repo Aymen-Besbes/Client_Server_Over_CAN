@@ -49,21 +49,22 @@ Those technologies were used :
 ## Configuration File Structure
 ![Alt Text](configstructure.png){:width="600" height="400"}
 
-The configuration is represented in JSON format and consists of two main components: client_app and server_app.
-    * client_app
+The configuration is represented in JSON format and consists of two main components: client_app and server_app:
+
+* client_app
     The client_app section contains the following fields:
-        - frame_id:
+       - frame_id:
             Type: Integer
             Description: The identifier for the CAN frame. 
-        - data:
+       - data:
             Type: Array of Integers
             Description: An array representing the data payload of the CAN frame.
-        - interface:
+       - interface:
             Type: String
             Description: The name of the virtual CAN interface used for communication.
-    * server_app
+* server_app
     The server_app section contains the following field:        
-        - interface:
+       - interface:
             Type: String
             Description: The name of the virtual CAN interface that the server listens on. 
 
@@ -71,8 +72,8 @@ The configuration is represented in JSON format and consists of two main compone
 ## Installation Instructions
 
 ### Prerequisites
-    - Linux environment 
-    - Ensure Cargo installation: 
+   - Linux environment 
+   - Ensure Cargo installation: 
         ```curl https://sh.rustup.rs -sSf | sh```
 
 ### Cloning the repository.
@@ -80,9 +81,22 @@ The configuration is represented in JSON format and consists of two main compone
         ```git clone https://gitlab.com/Aymen-Besbes/client_server_over_can.git```
 
 ## Usage:
-1. clone the project via : git clone https://gitlab.com/Aymen-Besbes/client_server_over_can.git
+1. clone the project via : 
+
+    git clone https://gitlab.com/Aymen-Besbes/client_server_over_can.git
+
 2. Run ```cargo build```
+
 3. Launch both applications on two different terminals:
-    - Terminal1: ```./launch_communication.sh server path/to/config/file```
-    - Terminal2: ```./launch_communication.sh client path/to/config/file```
-    Note: Ensure running the server first and enter your root password to ensure the creation of the virtual can interface given at the configuration file.
+
+    - Terminal1: 
+        ```./launch_communication.sh server path/to/config/file```
+    
+    - Terminal2:
+         ```./launch_communication.sh client path/to/config/file```
+    
+    Notes: 
+    
+    - Ensure running the server first and enter your root password to ensure the creation of the virtual can interface given at the configuration file.
+
+    - In case of not specifying the configuration file path, a default config file is provided.
