@@ -9,10 +9,10 @@ The client transmits a data frame associated with a specific frame ID through an
 
 ## Tech Stack
 Those technologies were used :
-    - Rust Programming Language
-    - Wireshark for the vizualization of the traffic
-    - shell scripting
-    
+- Rust Programming Language
+- Wireshark for the vizualization of the traffic
+- shell scripting
+
 ## Project Structure
 
 * Src Directory :
@@ -34,8 +34,10 @@ Those technologies were used :
 * VirCanCreation.sh:
     Script use to create a virtual CAN interface
     usage : 
-        - ```cd Project```
-        - ```./VirCanCreation.sh interface_name```
+
+    - ```cd Project```
+    
+    - ```./VirCanCreation.sh interface_name```
 
 * launch_communication.sh:
     Utility: Allows to run an application within a given or a default path.
@@ -45,7 +47,7 @@ Those technologies were used :
         ```./launch_communication.sh client ./src/config/config.json```
 
 ## Configuration File Structure
-![plot](./configstructure.png)
+![drawing](configstructure.png)
 The configuration is represented in JSON format and consists of two main components: client_app and server_app.
     * client_app
     The client_app section contains the following fields:
@@ -68,11 +70,13 @@ The configuration is represented in JSON format and consists of two main compone
 ## Installation Instructions
 
 ### Prerequisites
-    * Linux environment 
-    * Ensure Cargo installation ```curl https://sh.rustup.rs -sSf | sh```
+    - Linux environment 
+    - Ensure Cargo installation: 
+        ```curl https://sh.rustup.rs -sSf | sh```
 
 ### Cloning the repository.
-    clone the project via : ```git clone https://gitlab.com/Aymen-Besbes/client_server_over_can.git```
+    clone the project via : 
+        ```git clone https://gitlab.com/Aymen-Besbes/client_server_over_can.git```
 
 ## Usage:
 1. clone the project via : git clone https://gitlab.com/Aymen-Besbes/client_server_over_can.git
