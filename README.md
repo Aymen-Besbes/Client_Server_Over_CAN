@@ -4,6 +4,9 @@
 This repository is presenting a simple Client Server communication for CAN Protocol Using Rust Programming Language.
 The client sends a data frame within a frameid and via an interface configured into the configuration file.json
 
+## Application Architecture
+![plot](./architecture.png)
+
 ## Project Structure
 
 * Src Directory :
@@ -26,4 +29,4 @@ The client sends a data frame within a frameid and via an interface configured i
 3. Launch both applications on two different terminals using the command :
      ./launch_communication application path
     where application in ['client','server']
-    and path is the path of configuration file;it is optional. 
+    and path is the path of configuration file;it is optional.
