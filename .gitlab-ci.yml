@@ -14,14 +14,6 @@ build-job:
       - target/debug/server
       - target/debug/config
 
-show-executable:
-  stage: exec
-  script:
-    - echo " -----------------Executable-------------------------" 
-    - ./target/debug/config
-    - ./target/debug/server
-    - ./target/debug/client
-
 run-server-job:
   stage: run
   before_script:
