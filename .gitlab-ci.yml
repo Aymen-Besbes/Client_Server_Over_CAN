@@ -27,10 +27,9 @@ run-server-job:
   image: rust:latest
   before_script:
     - ifconfig
-    - touch test.log
   script:
     - (./test_server.sh & sleep 10 && ./test_client.sh & sleep 20) >test.log
-    
+    - cat test.log
   after_script:
     - echo "Output"
     - cat test.log
