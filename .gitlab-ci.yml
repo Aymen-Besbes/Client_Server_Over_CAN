@@ -20,28 +20,15 @@ show-executable:
     - echo " -----------------Executable-------------------------" 
     - ./builds/t3_FuHHD9/0/Aymen-Besbes/client_server_over_can/executable
 
-runjob:
+run-server-job:
   stage: run
   before_script:
     - ifconfig
   script:
-    - cargo run --bin server > server.log 2>&1 &
-    - PID=$!
-    - sleep 20
-    - cargo run --bin client > client.log 2>&1 &
-    - PIDS=$!
-    - echo "Server PID: $PID"
-    - echo "Client PID: $PIDS"
-    - ps -a
-    - kill -9 $PID
-    - echo "Server killed"
-    - kill -9 $PIDS
-    - echo "Client killed"
-    - ps -a
-  artifacts:
-    paths:
-      - server.log
-      - client.log
+    - ./test_server.sh & 
+    - sleep 10
+    - ./test_client.sh
+  
 
 test-job:
   stage: test
