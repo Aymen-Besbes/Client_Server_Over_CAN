@@ -18,7 +18,9 @@ show-executable:
   stage: exec
   script:
     - echo " -----------------Executable-------------------------" 
-    - ./builds/t3_FuHHD9/0/Aymen-Besbes/client_server_over_can/executable
+    - ./target/debug/config
+    - ./target/debug/server
+    - ./target/debug/client
 
 run-server-job:
   stage: run
@@ -29,7 +31,6 @@ run-server-job:
     - sleep 10
     - ./test_client.sh
   
-
 test-job:
   stage: test
   image: rust:latest
