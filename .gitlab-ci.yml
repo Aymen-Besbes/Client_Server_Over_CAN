@@ -1,5 +1,6 @@
 stages:
   - build
+  - exec
   - run
   - test
 
@@ -8,6 +9,15 @@ build-job:
   image: rust:latest
   script:
     - cargo build --verbose
+  artifacts:
+    path:
+      - executable.sh
+
+show-executable:
+  stage: exec
+  script:
+    - echo " -----------------Executable-------------------------" 
+    - ./executable.sh
 
 run-server-job:
   stage: run
