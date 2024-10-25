@@ -11,13 +11,13 @@ build-job:
     - cargo build --verbose
   artifacts:
     paths:
-      - executable.sh
+      - /builds/t3_FuHHD9/0/Aymen-Besbes/client_server_over_can/executable
 
 show-executable:
   stage: exec
   script:
     - echo " -----------------Executable-------------------------" 
-    - ./executable.sh
+    - ./builds/t3_FuHHD9/0/Aymen-Besbes/client_server_over_can/executable
 
 run-server-job:
   stage: run
