@@ -10,7 +10,7 @@ build-job:
   script:
     - cargo build --verbose
   artifacts:
-    path:
+    paths:
       - executable.sh
 
 show-executable:
