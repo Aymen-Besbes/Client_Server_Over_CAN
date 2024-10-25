@@ -30,9 +30,10 @@ run-server-job:
     - touch test.log
   script:
     - (./test_server.sh & sleep 10 && ./test_client.sh ) >test.log
+    - sleep 10
   after_script:
     - echo "Output"
-    - nano test.log
+    - cat test.log
 
 test-job:
   stage: test
