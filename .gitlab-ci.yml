@@ -30,11 +30,15 @@ run-server-job:
     - sleep 20
     - cargo run --bin client &
     - PIDS=$!
+    - echo $PID
+    - echo $PIDS
+    - ps -a
     - kill -9 $PID
     - echo "client killed"
     - kill -9 $PIDS
     - echo "client server"
-
+    - ps -a
+    
 test-job:
   stage: test
   image: rust:latest
