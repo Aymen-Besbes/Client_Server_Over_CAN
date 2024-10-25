@@ -26,10 +26,8 @@ run-server-job:
   before_script:
     - ifconfig
   script:
-    - (./test_server.sh & sleep 10 && ./test_client.sh & sleep 20) >test1.log
-    - sleep 20
-    - cat test1.log
-  
+    - cargo run --bin client & 
+    - cargo run --bin server & 
 
 test-job:
   stage: test
