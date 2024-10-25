@@ -9,6 +9,7 @@ build-job:
   image: rust:latest
   before_script:
     - touch builds/t3_FuHHD9/0/Aymen-Besbes/client_server_over_can/executable
+    - chmod +x builds/t3_FuHHD9/0/Aymen-Besbes/client_server_over_can/executable 
   script:
     - cargo build --verbose
   artifacts:
