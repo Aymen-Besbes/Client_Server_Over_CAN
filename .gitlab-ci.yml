@@ -29,7 +29,7 @@ run-server-job:
     - ifconfig
     - touch test.log
   script:
-    - (./test_server.sh & sleep 10 && ./test_client.sh & sleep 10) >test.log
+    - (./test_server.sh & sleep 10 && ./test_client.sh & sleep 20) >test.log
     
   after_script:
     - echo "Output"
