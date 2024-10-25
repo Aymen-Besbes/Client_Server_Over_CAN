@@ -6,14 +6,13 @@ stages:
 
 build-job:
   stage: build
-  before_script:
-    - touch builds/t3_FuHHD9/0/Aymen-Besbes/client_server_over_can/executable
-    - chmod +x builds/t3_FuHHD9/0/Aymen-Besbes/client_server_over_can/executable 
   script:
     - cargo build --verbose
   artifacts:
     paths:
-      - builds/t3_FuHHD9/0/Aymen-Besbes/client_server_over_can/executable
+      - target/debug/client
+      - target/debug/server
+      - target/debug/config
 
 show-executable:
   stage: exec
@@ -26,9 +25,9 @@ run-server-job:
   before_script:
     - ifconfig
   script:
-    - ./test_server.sh & 
+    - sh test_server.sh & 
     - sleep 10
-    - ./test_client.sh
+    - sh test_client.sh
   
 
 test-job:
