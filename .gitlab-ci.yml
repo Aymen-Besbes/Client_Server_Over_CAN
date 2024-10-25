@@ -32,7 +32,7 @@ run-server-job:
     - (./test_server.sh & sleep 10 && ./test_client.sh ) >test.log
   after_script:
     - echo "Output"
-    - cat test1.log
+    - nano test.log
 
 test-job:
   stage: test
