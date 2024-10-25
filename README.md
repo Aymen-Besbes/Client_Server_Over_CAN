@@ -47,6 +47,9 @@ Those technologies were used :
     - Example:
         ```./launch_communication.sh client ./src/config/config.json```
 
+* .gitlab-ci.yml:
+    - yml file to prepare a pipline containing 3 stages :Build , run and test.
+
 ## Configuration File Structure
 ![Alt Text](configstructure.png){:width="600" height="400"}
 
