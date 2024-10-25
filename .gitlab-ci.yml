@@ -24,7 +24,6 @@ show-executable:
 
 run-server-job:
   stage: run
-  image: rust:latest
   before_script:
     - ifconfig
   script:
