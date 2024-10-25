@@ -25,10 +25,15 @@ run-server-job:
   before_script:
     - ifconfig
   script:
-    - sh test_server.sh & 
-    - sleep 10
-    - sh test_client.sh
-  
+    - cargo run --bin server &
+    - PID=$!
+    - sleep 20
+    - cargo run --bin client &
+    - PIDS=$!
+    - kill -9 $PID
+    - echo "client killed"
+    - kill -9 $PIDS
+    - echo "client server"
 
 test-job:
   stage: test
