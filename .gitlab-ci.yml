@@ -28,11 +28,9 @@ run-server-job:
   before_script:
     - ifconfig
   script:
-    - (./test_server.sh & sleep 10 && ./test_client.sh & sleep 20) >test.log
-    - cat test.log
-  after_script:
-    - echo "Output"
-    - cat test.log
+    - (./test_server.sh & sleep 10 && ./test_client.sh & sleep 20) >test1.log
+    - cat test1.log
+  
 
 test-job:
   stage: test
