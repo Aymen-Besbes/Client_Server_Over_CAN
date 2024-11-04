@@ -86,6 +86,19 @@ The configuration is represented in JSON format and consists of two main compone
 clone the project via : 
 ```git clone https://gitlab.com/Aymen-Besbes/client_server_over_can.git```
 
+###  Run with sudo privileges for the script VirCanCreation.sh
+1. Remove Password demand for the script:
+    ```
+    sudo visudo
+
+    ```
+2. Add at the bottom of the fie 
+    ```
+    yourusername ALL=NOPASSWD: /path/to/VirCanCreation.sh
+
+    ```
+3. ctrl+o then Enter then ctrl+x
+
 ## Usage:
 1. clone the project
 
