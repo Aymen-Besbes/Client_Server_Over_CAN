@@ -1,6 +1,5 @@
 stages:
   - build
-  - exec
   - run
   - test
 
@@ -14,7 +13,7 @@ build-job:
       - target/debug/server
       - target/debug/config
 
-run-server-job:
+run-applications:
   stage: run
   before_script:
     - ifconfig
